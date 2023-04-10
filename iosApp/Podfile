@@ -1,0 +1,11 @@
+platform :ios, '15.0'
+
+def general_pod
+  pod 'shared', :path => '../shared'
+  pod 'mokoMvvmFlowSwiftUI', :podspec => 'https://raw.githubusercontent.com/icerockdev/moko-mvvm/release/0.15.0/mokoMvvmFlowSwiftUI.podspec'
+end
+
+target 'iosApp' do
+  use_frameworks!
+  general_pod
+end

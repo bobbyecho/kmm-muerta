@@ -1,0 +1,36 @@
+CREATE TABLE Reminder (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    desc TEXT DEFAULT NULL,
+    isDone INTEGER AS Boolean NOT NULL
+);
+
+getAllReminder:
+SELECT * FROM Reminder
+ORDER BY id DESC;
+
+getReminderById:
+SELECT * FROM Reminder
+WHERE id = ?;
+
+insertReminder:
+INSERT INTO Reminder (id, title, desc, isDone)
+VALUES (?, ?, ?, ?);
+
+updateReminder:
+UPDATE Reminder
+SET
+    title = ?,
+    desc = ?,
+    isDone = ?
+WHERE id = ?;
+
+toggleReminder:
+UPDATE Reminder
+SET
+    isDone = ?
+WHERE id = ?;
+
+deleteReminderbyId:
+DELETE FROM Reminder
+WHERE id = ?;
